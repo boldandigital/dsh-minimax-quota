@@ -1,0 +1,20 @@
+# @local/minimax-quota bundle patch: mounts the quota chip into a dsh profile.
+#
+# The host half reads the MiniMax credential through `ctx.credentials` (the
+# harness credential seam), so the API key never reaches the browser: the
+# client half asks the host over the loopback Connection RPC channel and gets
+# back already-normalized quota rows.
+#
+# Installed into the active profile with:
+#   dsh plugin --profile desktop add "link:/Users/lars/Documents/deepseek-harness/default-workspace/dsh-minimax-quota"
+
+- insert:
+    - id: minimax-quota
+      name: '@local/minimax-quota'
+      config:
+        # How often the chip re-reads the quota. MiniMax resets its 5-hour
+        # window on a rolling schedule, so a minute is a sensible ceiling.
+        refreshMs: 60000
+        # Credential reference resolved through the harness credential seam.
+        # `MINIMAX_API_KEY` is already present in ~/.dsh/.credentials.yaml.
+        credentialRef: MINIMAX_API_KEY
