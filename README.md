@@ -73,27 +73,22 @@ works with no further setup.
 ## Install
 
 ```bash
-dsh plugin --profile desktop add \
-  "link:/Users/lars/Documents/deepseek-harness/default-workspace/minimax-quota"
+dsh plugin --profile web add dsh-minimax-quota
 ```
 
-Or through the plugin manager:
-
-```
-plugin_manager install_bundle → link:/Users/lars/Documents/deepseek-harness/default-workspace/minimax-quota
-```
+Or through the plugin manager: **Plugins → Add plugin**, then choose the npm
+package `dsh-minimax-quota`.
 
 After installing, **reload the GUI page** so the browser picks up the new
 client module from the host's client graph.
 
 ## Also useful
 
-`scripts/minimax-quota.mjs` in the workspace root prints the same quota from
-the terminal, with a `--json` flag:
+The same quota can be read from the terminal with the host's own tooling,
+which prints it as JSON:
 
 ```bash
-node scripts/minimax-quota.mjs
-node scripts/minimax-quota.mjs --json
+dsh plugin --profile desktop status
 ```
 
 ## Reference
@@ -104,7 +99,7 @@ of the composer dock.
 
 ## npm
 
-This package is also published on npm as [`dsh-minimax-quota`](https://www.npmjs.com/package/dsh-minimax-quota), so you can install it with:
+This package is published on npm as [`dsh-minimax-quota`](https://www.npmjs.com/package/dsh-minimax-quota), so you can install it with:
 
 ```sh
 dsh plugin --profile web add dsh-minimax-quota

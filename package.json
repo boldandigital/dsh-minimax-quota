@@ -22,7 +22,8 @@
     "lib",
     "cordis.patch.yml",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "MARKETPLACES.md"
   ],
   "dsh": {
     "bundle": {
@@ -40,14 +41,19 @@
     }
   },
   "keywords": [
+    "deepseek-harness",
     "dsh",
     "dsh-plugin",
-    "deepseek-harness",
     "minimax",
-    "quota"
+    "quota",
+    "quota-chip"
   ],
   "engines": {
     "node": ">=22.0.0",
     "dsh": ">=0.2.0"
+  },
+  "homepage": "https://github.com/boldandigital/dsh-minimax-quota#readme",
+  "bugs": {
+    "url": "https://github.com/boldandigital/dsh-minimax-quota/issues"
   }
 }
