@@ -7,12 +7,33 @@ the composer card — so the remaining quota appears beside the "8.9M tok · Cac
 91%" strip without touching the shipped UI.
 
 ```
-● MiniMax 32%
+● MiniMax 5h 32%
 ```
 
-Hovering the chip shows every window: the 5-hour and weekly remaining
-percentage, the "x of y left" request counts where MiniMax reports them, and
-the reset time for each window.
+**Clicking the chip opens a panel** with the full detail: for every model
+bucket MiniMax reports, both the 5-hour and the weekly window, each with its
+remaining percentage, the "x of y left" request counts where MiniMax reports
+them, and the reset time.
+
+Hovering does nothing. A readout that only appears on hover is invisible on a
+touch screen, awkward on a trackpad and impossible to screenshot — so the
+extra numbers live in a panel you open on purpose, and the chip stays a
+one-glance answer.
+
+### Choosing what the chip shows
+
+The panel carries a small segmented control — **5-hour** or **Weekly** — that
+decides which window the chip itself reports. The choice is remembered in the
+browser, so it survives a reload, and the chip updates the moment you pick
+one.
+
+The chip shows the **lowest** percentage across the reported model buckets for
+the chosen window, because that is the number that decides when you actually
+run out. If MiniMax reports only one of the two windows, the chip falls back
+to the other one rather than showing nothing.
+
+The panel always shows **both** windows, whatever the chip is set to, so
+nothing is hidden by the choice.
 
 ## How it works
 

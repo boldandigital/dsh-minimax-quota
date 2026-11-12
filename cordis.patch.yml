@@ -6,7 +6,7 @@
 # back already-normalized quota rows.
 #
 # Installed into the active profile with:
-#   dsh plugin --profile desktop add "link:/Users/lars/Documents/deepseek-harness/default-workspace/minimax-quota"
+#   dsh plugin --profile desktop add dsh-minimax-quota
 
 - insert:
     - id: minimax-quota
