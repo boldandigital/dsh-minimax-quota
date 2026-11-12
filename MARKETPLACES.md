@@ -77,12 +77,32 @@ npm version patch     # 0.1.0 -> 0.1.1
 git tag v0.1.1 && git push origin main --tags
 ```
 
-The workflow in `.github/workflows/publish.yml` publishes the tagged version.
-Until the trusted publisher below is configured it publishes with the granular
-token in `~/.npmrc`; from January 2027 npm stops letting bypass-2FA tokens
-publish, so configure the trusted publisher before then:
+**Releases are published by hand, not by CI.** The workflow in
+`.github/workflows/publish.yml` publishes the tagged version over OIDC, but the
+npm trusted publisher for this package is not configured yet, so the workflow
+fails with `E404 ... you do not have permission to access it`. The npm token
+in `~/.npmrc` is a granular token that bypasses 2FA, and npm refuses to let
+such a token configure the trusted publisher:
+
+```text
+E403 Granular access tokens that bypass two-factor authentication may not
+perform this action.
+```
+
+So the release is `npm publish --access public` from a clean checkout, and the
+tag is pushed afterwards. The failed CI run on a tag is expected and harmless
+— it does not publish anything.
+
+Configuring the trusted publisher needs a person, because it needs a 2FA
+session in the browser: **Package → Settings → Trusted Publisher**, pointing at
+`boldandigital/dsh-minimax-quota`, the workflow file
+`.github/workflows/publish.yml`, and the `publish` permission. The equivalent
+CLI is:
 
 ```sh
 npm trust github dsh-minimax-quota --file publish.yml \
   --repo boldandigital/dsh-minimax-quota --allow-publish
 ```
+
+which asks for confirmation and then fails with the 403 above when run with
+the current token.
