@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "MiniMax 配额",
+    "description": "在输入框中显示 MiniMax Token Plan 的剩余配额：一个小徽标显示 5 小时和每周窗口，点击展开可看完整详情。"
+  }
+}
