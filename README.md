@@ -1,3 +1,5 @@
+[![Listed on DSH Plugin Hub](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/plugins/boldandigital/dsh-minimax-quota)
+
 # dsh-minimax-quota
 
 MiniMax Token Plan quota chip for the DeepSeek Harness web surface.
