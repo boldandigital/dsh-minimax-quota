@@ -1,7 +1,7 @@
 {
   "name": "dsh-minimax-quota",
   "description": "MiniMax Token Plan quota chip for the DeepSeek Harness web surface: a compact inline entry in the composer dock showing the remaining 5-hour and weekly quota windows, with the full detail in a click-to-open panel.",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "license": "MIT",
   "author": {
     "name": "boldandigital",
