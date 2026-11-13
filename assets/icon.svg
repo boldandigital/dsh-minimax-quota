@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MiniMax quota">
+  <title>MiniMax quota</title>
+  <!--
+    A quota gauge: a ring whose filled arc is the remaining allowance, with the
+    needle sitting in it. The plugin tells you what is left before you spend
+    it, so the arc is the subject and the needle only points.
+  -->
+  <defs>
+    <linearGradient id="mq-plate" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#091c36"/>
+      <stop offset="1" stop-color="#05121f"/>
+    </linearGradient>
+    <linearGradient id="mq-arc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#57ebee"/>
+      <stop offset="1" stop-color="#4ac8ca"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#mq-plate)"/>
+
+  <!-- the ring: open at the bottom, so it reads as a dial -->
+  <path d="M18.6 45.4a19 19 0 1 1 26.8 0" fill="none" stroke="#1d3557" stroke-width="5" stroke-linecap="round"/>
+  <!-- the filled part: the remaining allowance -->
+  <path d="M32 13a19 19 0 0 1 18.2 14" fill="none" stroke="url(#mq-arc)" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- the needle, pointing into the filled arc -->
+  <path d="M32 32l10-8" fill="none" stroke="#57ebee" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="32" cy="32" r="4.5" fill="#ffffff"/>
+
+  <!-- monogram -->
+  <rect x="36" y="42" width="24" height="18" rx="6" fill="#091c36" stroke="#57ebee" stroke-width="2"/>
+  <text x="48" y="55" font-family="ui-sans-serif,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.3">MQ</text>
+</svg>
