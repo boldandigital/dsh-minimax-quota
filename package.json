@@ -1,7 +1,7 @@
 {
   "name": "dsh-minimax-quota",
   "description": "MiniMax Token Plan quota chip for the DeepSeek Harness web surface: a compact inline entry in the composer dock showing the remaining 5-hour and weekly quota windows, with the full detail in a click-to-open panel.",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "license": "MIT",
   "author": {
     "name": "boldandigital",
@@ -16,12 +16,14 @@
   "exports": {
     ".": "./lib/index.js",
     "./client": "./lib/client.js",
+    "./locale/*.json": "./locale/*.json",
     "./icon": "./assets/icon.svg",
     "./package.json": "./package.json"
   },
   "files": [
     "lib",
     "assets/icon.svg",
+    "locale/*.json",
     "cordis.patch.yml",
     "README.md",
     "LICENSE",
@@ -52,7 +54,7 @@
   ],
   "engines": {
     "node": ">=22.0.0",
-    "dsh": ">=0.2.0"
+    "dsh": ">=0.2.2-rc.3"
   },
   "homepage": "https://github.com/boldandigital/dsh-minimax-quota#readme",
   "bugs": {
